@@ -20,8 +20,7 @@ form="""
 <form method="post" action="/testform">
 
     <H1>Current Server Date/Time:""" + currentTime + """</H1>
-    <label>Hello from Patrick to Udacity:<br><input name="q"><br>
-    <input type="submit"></label>
+    <label>Hello from Patrick to Udacity:<br><input name="q"><input type="submit"></label>
 </form>
 """
 class MainPage(webapp2.RequestHandler):
