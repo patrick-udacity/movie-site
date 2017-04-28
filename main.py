@@ -17,26 +17,25 @@ import datetime
 t = datetime.datetime.now()
 currentTime = str(t)
 form="""
-<form method="post" action="/testform">
+<html><title>Lession 2</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body>
+<form method="post">
 
     <H1>Current Server Date/Time:""" + currentTime + """</H1>
-    <label>Hello from Patrick to Udacity:<br><input name="q"><br>
-    <input type="submit"></label>
+    <label style="font-weight: bold">What is your birthdate? <input type="date" name="bday" placeholder="MM/DD/YYYY"></label><br>
+    <input type="submit">
 </form>
+</body></html>
 """
 class MainPage(webapp2.RequestHandler):
     def get(self):
-        #self.response.headers['Content-Type'] = 'text/html'
         self.response.write(form)
 
-class TestHandler(webapp2.RequestHandler):
     def post(self):
-        q=self.request.get("q")
-        self.response.out.write(q)
+        self.response.out.write("Thanks. That is a valid day.")
 
-        #self.response.headers['Content-Type'] = 'text/html'
-        #self.response.write(self.request)
-
-app = webapp2.WSGIApplication([('/', MainPage),
-    ('/testform',TestHandler)],
+app = webapp2.WSGIApplication([('/', MainPage)],
     debug=True)
