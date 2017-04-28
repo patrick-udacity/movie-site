@@ -11,13 +11,17 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
 import webapp2
 
+form="""
+<form action="http://www.google.com/search">
 
+    <label>Hello, Udacity<input name="q"><input type="submit"></label>
+</form>
+"""
 class MainPage(webapp2.RequestHandler):
     def get(self):
-        self.response.headers['Content-Type'] = 'text/plain'
+        self.response.headers['Content-Type'] = 'text/html'
         self.response.write('Hello, Udacity!')
 
 
