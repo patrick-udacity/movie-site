@@ -22,7 +22,7 @@ form="""
 class MainPage(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/html'
-        self.response.write('Hello, Udacity!')
+        self.response.write(form)
 
 
 app = webapp2.WSGIApplication([
