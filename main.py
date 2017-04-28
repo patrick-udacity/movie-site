@@ -12,11 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import webapp2
+import datetime
 
+t = datetime.datetime.now()
+currentTime = str(t)
 form="""
 <form action="http://www.google.com/search">
 
-    <label>Hello, Udacity<input name="q"><input type="submit"></label>
+    <label>Current Server Date/Time:""" + currentTime + """</label><br>
+    <label>Hello from Patrick to Udacity:<br><input name="q"><input type="submit"></label>
 </form>
 """
 class MainPage(webapp2.RequestHandler):
